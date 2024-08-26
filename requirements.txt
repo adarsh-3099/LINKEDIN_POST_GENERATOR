@@ -1,4 +1,7 @@
 crewai
 crewai_tools
 load_dotenv
-langchain-huggingface
+langchain-groq
+duckduckgo-search
+gradio
+textblop
