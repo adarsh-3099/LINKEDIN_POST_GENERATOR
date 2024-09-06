@@ -1,7 +1,11 @@
 import json  # Import the JSON module to parse JSON strings
 from langchain_core.agents import AgentFinish
 
-agent_finishes  = []
+# Global lists to store agent names and their outputs
+agent_names = []
+agent_outputs = []
+agent_finishes = []
+agent_dict = {}
 
 import json
 from typing import Union, List, Tuple, Dict
@@ -36,9 +40,12 @@ def print_agent_output(agent_output: Union[str, List[Tuple[Dict, str]], AgentFin
         elif isinstance(agent_output, AgentFinish):
             print(f"-{call_number}----AgentFinish---------------------------------------", file=log_file)
             print(f"Agent Name: {agent_name}", file=log_file)
+            agent_names.append(agent_name)
             agent_finishes.append(agent_output)
             # Extracting 'output' and 'log' from the nested 'return_values' if they exist
             output = agent_output.return_values
+            agent_outputs.append(output.get("output",""))
+            agent_dict[agent_name] = output.get("output","")
             # log = agent_output.get('log', 'No log available')
             print(f"AgentFinish Output: {output['output']}", file=log_file)
             # print(f"Log: {log}", file=log_file)

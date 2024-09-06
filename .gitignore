@@ -3,3 +3,8 @@
 flagged/
 __pycache__/
 .DS_Store
+crew_callback_logs.txt
+draft_post.txt
+research_info.txt
+rewrite.txt
+suggestions.txt
