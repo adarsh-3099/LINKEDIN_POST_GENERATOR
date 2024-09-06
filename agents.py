@@ -10,17 +10,17 @@ from collections import Counter
 import textstat
 
 llm_research = ChatGroq(
-            api_key="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",
+            api_key="<YOUR_API_KEY>",
             model="llama3-70b-8192"
         )
 
 llm_post = ChatGroq(
-            api_key="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",
+            api_key="<YOUR_API_KEY>",
             model="llama-3.1-70b-versatile"
         )
 
 llm_review = ChatGroq(
-            api_key="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",
+            api_key="<YOUR_API_KEY>",
             model="mixtral-8x7b-32768"
         )
 
